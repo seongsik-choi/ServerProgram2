@@ -43,6 +43,8 @@ ___
   * **A8) request.getAttribute("title"): 저장된 데이터의 회수**  
   * **Q9) 서블릿의 사용 목적?**  
   * **A9) Web에서의 데이터 처리, JSP도 서버에서 서블릿으로 변경되어 실행**  
+  * **Q10) 서블릿 실행시 GET방식이 호출되는 이유는?** 
+  * **A10) http://localhost:9090/mvc/form/study2 주소가 브러우저에 입력되어 실행되기 때문에 GET 방식으로처리 + GET 방식(Broswer에 주소를 입력) +POST방식(form에서 진행)** 
 
 
 
