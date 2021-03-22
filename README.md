@@ -50,7 +50,7 @@ ___
 * 0319 : [04] JSP View가 분리된 MVC Controller version 2.0 실습(Servlet(Controller)<->JSP(View)  
   * **ex)Controller2ex.java(Controller) & view2ex.jsp(View)로 나뉘는 MVC 2.0 예제**  
 ___ 
-* 0320 : [05] Model, JSP View가 분리된 MVC Controller version 3.0 실습  
+* 0322 : [05] Model, JSP View가 분리된 MVC Controller version 3.0 실습  
   * .jsp Model1 : form.jsp -> proc.jsp -> beans.java : model1은 디자인과 처리과 섞여있어 복잡(한사람이 여러 작업하는 꼴)  
   * .jsp Model2(MVC) : Controller3.java의 doGet() -> form.jsp -> post submit -> Controller3.java의 doPost() -> Beans -> proc.jsp
   * **ex)Controller3.java & Controller3Model.java & form, proc.jsp 로 나뉘는 MVC 2.0 예제**  
@@ -59,7 +59,7 @@ ___
   * 2) doPost()의 request 객체 = setData()의 request 객체는 결국 같은 메모리, Call By Reference(Return이 필요 NO)   
 ___ 
 * **Spring Legacy**  
-* 0320 : [06] Maven, Spring기반 MVC의 원리, STS Spring MVC의 개발 구조 분석, Spring 4.3.23~26 설정, JDK 1.8.0, Servlet 3.1 설정, Spring  Tools 3 Add-On 설치 ★  
+* 0322 : [06] Maven, Spring기반 MVC의 원리, STS Spring MVC의 개발 구조 분석, Spring 4.3.23~26 설정, JDK 1.8.0, Servlet 3.1 설정, Spring  Tools 3 Add-On 설치 ★  
   * **흐름 : JAVA -> JSP -> MVC -> Spring Legacy(Spring 구형 개발~18년도) -> Spring Boot(Spring 개발 2019~)**  
 **▶ 개발자가 알아야하는 Spring 핵심 루틴**  
   * **① Request : Chrome에서 주소 입력 후 요청 -> Dispacter Servlet : 사용자의 요청을 받음**  
@@ -68,5 +68,5 @@ ___
   * **④ Model : DBMS등에 접속하여 데이터 처리**  
   * **⑤ View : Model의 처리 결과를 출력, Dispacter Sevlet이 최종 출력할 View JSP를 결정**  
   * **⑥ 최종적으로 : JSP or HTML이 출력**  
-* 0320 : 
-* 0320 : 
+* 0322 : 
+* 0322 : 
