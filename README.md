@@ -50,3 +50,8 @@ ___
 * 0319 : [04] JSP View가 분리된 MVC Controller version 2.0 실습(Servlet(Controller)<->JSP(View)  
   * **ex)Controller2ex.java(Controller) & view2ex.jsp(View)로 나뉘는 MVC 2.0 예제**  
 ___ 
+* 0320 : 
+  * **.jsp Model1 : form.jsp -> proc.jsp -> beans.java : model1은 디자인과 처리과 섞여있어 복잡(한사람이 여러 작업하는 꼴)**  
+  * **.jsp Model2(MVC) : Controller3.java의 doGet() -> form.jsp -> post submit -> Controller3.java의 doPost() -> Beans -> proc.jsp**  
+* 0320 :  
+* 
