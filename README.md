@@ -60,7 +60,7 @@ ___
 ___ 
 * **Spring Legacy**  
 * 0322 : [06] Maven, Spring기반 MVC의 원리, STS Spring MVC의 개발 구조 분석, Spring 4.3.23~26 설정, JDK 1.8.0, Servlet 3.1 설정, Spring  Tools 3 Add-On 설치 ★  
-  * **흐름 : JAVA -> JSP -> MVC -> Spring Legacy(Spring 구형 개발~18년도) -> Spring Boot(Spring 개발 2019~)**  
+  * **흐름 : JAVA -> JSP -> MVC -> Spring Legacy(Spring 구형 개발-18년도) -> Spring Boot(Spring 개발 2019-)**  
 **▶ 개발자가 알아야하는 Spring 핵심 루틴**  
   * **① Request : Chrome에서 주소 입력 후 요청 -> Dispacter Servlet : 사용자의 요청을 받음**  
   * **② HanlerMapping : GET or POST 방식의 구분하여 해당하는 메소드등을 검색**  
