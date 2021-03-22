@@ -53,9 +53,9 @@ ___
 * 0320 : [05] Model, JSP View가 분리된 MVC Controller version 3.0 실습  
   * .jsp Model1 : form.jsp -> proc.jsp -> beans.java : model1은 디자인과 처리과 섞여있어 복잡(한사람이 여러 작업하는 꼴)  
   * .jsp Model2(MVC) : Controller3.java의 doGet() -> form.jsp -> post submit -> Controller3.java의 doPost() -> Beans -> proc.jsp
-  * **Call By Reference**    
-  * Controller3Model.java의 request 객체 = doPost()의 request 객체  
-  * doPost()의 request 객체 = setData()의 request 객체는 결국 같은 메모리, Call By Reference(Return이 필요 NO)   
+  * **Call By Reference : 주기억 장치에 있는 Memory 공유**    
+  * 1) Controller3Model.java의 request 객체 = doPost()의 request 객체  
+  * 2) doPost()의 request 객체 = setData()의 request 객체는 결국 같은 메모리, Call By Reference(Return이 필요 NO)   
 * 0320 :  
 * 0320 : 
 * 0320 : 
