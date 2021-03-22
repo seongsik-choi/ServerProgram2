@@ -79,5 +79,7 @@ ___
   * **④ Model : DBMS등에 접속하여 데이터 처리**  
   * **⑤ View : Model의 처리 결과를 출력, Dispacter Sevlet이 최종 출력할 View JSP를 결정**  
   * **⑥ 최종적으로 : JSP or HTML이 출력**  
-* 0322 : 
-* 0322 : 
+* 0322 : [07] STS Spring project 구조  
+* 0322 : [08][과제] sts_env STS Spring project 생성 실습  
+___ 
+* 0323 :  
