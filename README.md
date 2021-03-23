@@ -113,31 +113,32 @@ public class CalcCont {
     System.out.println("-> CalcCont object created.");
   }
   
-  /* http://localhost:9090/calc/calc/add.do?no1=100&no2=50   -> calc(/dic 이름) / calc(mapping name)
-   Method를 Mapping으로 사용, MVC의 url은 .do 마무리 */
-
-  @RequestMapping(value="/calc/add.do", method=RequestMethod.GET)
-  public ModelAndView add(int no1, int no2) {
-    ModelAndView mav = new ModelAndView();
-    mav.addObject("msg", "더하기");           // == request.setAttritube("msg", "더하기");
-    mav.addObject("result", no1 +no2);		// == request.setAttritube("reuslt", no1 + no2);
+  // ① http://localhost:9090/calc/calc/add.do?no1=100&no2=50   -> calc(패키지 이름) / calc(mapping name)
+  // ② Spring DispatcherServlet이 Web 요청을 받음(web.xml에 선언)
+  // ③ Spring Handler Mapping: Controller에서 일치하는 주소를 검색, 전송 method 확인
+  @RequestMapping(value="/calc/add.do", method=RequestMethod.GET) 
+  public ModelAndView add(int no1, int no2) {   // ④ Controller의 method() 실행
+    ModelAndView mav = new ModelAndView(); 
+    mav.addObject("msg", "더하기");           // ⑤  ==request.setAttritube("msg", "더하기");
+    mav.addObject("result", no1 +no2);   
     
     // /src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml
-    // 해당 주석은 servlet-context.xml의 구문
+    // 해당 주석 2line은 servlet-context.xml의 구문  : ModelAndView 준비하여 jsp 파일명 및 데이터 저장
     // <beans:property name="prefix" value="/WEB-INF/views/" />
     // <beans:property name="suffix" value=".jsp" />
     mav.setViewName("/calc/calc1");  // /WEB-INF/views/calc/calc1.jsp
     return mav;
+    
+    // ⑥ Spring DispatcherServlet이 주어진 jsp 페이지로 request, response객체를 forward
+    // 개발자가 선언하지 않아도 자동 forward
   }
-
-  // Substract method
+  
   // http://localhost:9090/calc/calc/sub.do?no1=100&no2=50
   @RequestMapping(value="/calc/sub.do", method=RequestMethod.GET)
   public ModelAndView sub(int no1, int no2) {
     ModelAndView mav = new ModelAndView(); 
     mav.addObject("msg", "빼기");          
     mav.addObject("result", no1 - no2);  
-
     mav.setViewName("/calc/calc1");  // /WEB-INF/views/calc/calc1.jsp
     return mav;
   }
