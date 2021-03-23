@@ -86,16 +86,15 @@ ___
   * **▶ JSP의 단점 : Scriptlet의 사용**
   * ① 보안문제(웹 상 JAVA Code  노출) : ex) JAVA코드 오류시 코드노출 + 주석노출
   * **▶ Context Path: <%=request.getContextPath()   -> 출력 ->ContextPath: /test**
-  * **① 패키지명 출력 (Legacy는 ex)sts.basic.test일 경우, 3번째 프로젝트명 사용)**
+  * ① 패키지명 출력 (Legacy는 ex)sts.basic.test일 경우, 3번째 프로젝트명 사용)
   * **▶JSP와 EL의 사용 차이(request 객체의 호출 차이)**
-  * **① JSP : request.getAttribute("name)      ==  EL : ${requestScope.name} or ${name}**
-  * **① JSP : request.getParameter("money") == EL : ${param.money}** 
-  * **① JSP : 생성된객체.getMovie()     체     == EL : ${dto.movie }**  
-  * **▶ ** 
-  * **① ** 
-  * **▶ ** 
-  * **① ** 
-  * **▶ ** 
-  * **① ** 
+  * ① JSP : request.getAttribute("name)      ==  EL : ${requestScope.name} or ${name}
+  * ① JSP : request.getParameter("money") == EL : ${param.money}
+  * ① JSP : 생성된객체.getMovie()     체     == EL : ${dto.movie }
+  * **▶** 
+  * ①  
+  * **▶** 
+  * ①  
+
 * 0323 :  
 * 0323 :  
