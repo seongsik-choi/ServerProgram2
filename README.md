@@ -113,13 +113,14 @@ public class CalcCont {
     System.out.println("-> CalcCont object created.");
   }
   
-  // http://localhost:9090/calc/calc/add.do?no1=100&no2=50   -> calc(/dic 이름) / calc(mapping name)
-  // Method를 Mapping으로 사용, MVC의 url은 .do 마무리
+  /* http://localhost:9090/calc/calc/add.do?no1=100&no2=50   -> calc(/dic 이름) / calc(mapping name)
+   Method를 Mapping으로 사용, MVC의 url은 .do 마무리 */
+
   @RequestMapping(value="/calc/add.do", method=RequestMethod.GET)
   public ModelAndView add(int no1, int no2) {
-    ModelAndView mav = new ModelAndView(); // 객체 생성
+    ModelAndView mav = new ModelAndView();
     mav.addObject("msg", "더하기");           // == request.setAttritube("msg", "더하기");
-    mav.addObject("result", no1 +no2);    // == request.setAttritube("reuslt", no1 + no2);
+    mav.addObject("result", no1 +no2);		// == request.setAttritube("reuslt", no1 + no2);
     
     // /src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml
     // 해당 주석은 servlet-context.xml의 구문
@@ -128,7 +129,6 @@ public class CalcCont {
     mav.setViewName("/calc/calc1");  // /WEB-INF/views/calc/calc1.jsp
     return mav;
   }
- 
 }
 ~~~
 * 0323 :  
