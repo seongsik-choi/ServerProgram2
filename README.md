@@ -64,9 +64,9 @@ ___
 ├─Spring Elements  
 ├─Java Resources(src)  
    └─src/main/java/sts/basic/test      <-- JAVA class 파일  
-   └─sts_basic/src/main/webapp             : Eclipse의 WebContent와 동일 기능  
+   └─sts_basic/src/main/webapp             : ★Eclipse의 WebContent와 동일 기능★(하위 폴더 ex)form 등)    
    └─sts_basic/src/main/webapp/resources     : CSS, JS, Image등의 리소스 저장 폴더  
-   └─sts_basic/src/main/webapp/WEB-INF       : Web 환경 설정 XML   
+   └─sts_basic/src/main/webapp/WEB-INF       : Web 환경 설정 XML + spring이 반드시 필요  
    └─sts_basic/src/main/webapp/WEB-INF/spring  : Spring 환경 설정 XML  
    └─sts_basic/src/main/webapp/WEB-INF/views   : JSP file 저장 폴더 
 ___ 
@@ -82,6 +82,11 @@ ___
 * 0322 : [07] STS Spring project 구조  
 * 0322 : [08][과제] sts_env STS Spring project 생성 실습  
 ___ 
-* 0323 : [09] EL(표현 언어, Expression Language)  
+* 0323 : [09] EL(표현 언어, Expression Language)
+  * **▶ JSP의 단점 : Scriptlet의 사용**  
+  * **① 보안문제(웹 상 JAVA Code  노출) : ex) JAVA코드 오류시 코드노출 + 주석노출**   
+
+  * **▶ Context Path: <%=request.getContextPath()   -> 출력 ->ContextPath: /test** 
+  * **① 패키지명(Legacy는 a.a.test 3번째 프로젝트명 사용)**  
 * 0323 :  
 * 0323 :  
