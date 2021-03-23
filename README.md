@@ -142,8 +142,9 @@ public class CalcCont {
 }
 ~~~
 ~~~
-<%--/webapp/WEB-INF/views/calc/calc1.jsp
-	Scriptlet 방식과 EL 방식의 처리
+<%--
+/webapp/WEB-INF/views/calc/calc1.jsp
+Scriptlet 방식과 EL 방식의 처리
 --%>
 <DIV class='container'>
 <DIV class='content'>
