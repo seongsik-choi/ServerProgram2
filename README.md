@@ -101,7 +101,7 @@ ___
 * **▶ Spring Legacy Project -> Spring Legacy Project 생성 : sts_calc / dev.mvc.calc** 
 ~~~
 // CallcCont.java
-package dev.mvc.calc;
+package dev.mvc.calc; // add method와 sub method 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -129,17 +129,43 @@ public class CalcCont {
     mav.setViewName("/calc/calc1");  // /WEB-INF/views/calc/calc1.jsp
     return mav;
   }
+
+  // Substract method
+  // http://localhost:9090/calc/calc/sub.do?no1=100&no2=50
+  @RequestMapping(value="/calc/sub.do", method=RequestMethod.GET)
+  public ModelAndView sub(int no1, int no2) {
+    ModelAndView mav = new ModelAndView(); 
+    mav.addObject("msg", "빼기");          
+    mav.addObject("result", no1 - no2);  
+    
+    // /src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml
+    // 해당 주석은 servlet-context.xml의 구문
+    // <beans:property name="prefix" value="/WEB-INF/views/" />
+    // <beans:property name="suffix" value=".jsp" />
+    mav.setViewName("/calc/calc1");  // /WEB-INF/views/calc/calc1.jsp
+    return mav;
+  }
 }
 ~~~
 ~~~
-<%--calc1.jsp--%>
+<%--/webapp/WEB-INF/views/calc/calc1.jsp
+	Scriptlet 방식과 EL 방식의 처리
+--%>
 <DIV class='container'>
 <DIV class='content'>
+
   <H1>계산기(Scriptlet calc1.jsp)</H1>
   <%= request.getAttribute("msg")%> 계산기<br>	<!-- setAttritube(addObject) -->
   수1: <%=request.getParameter("no1") %><br>	<!--  getParameter : url로 입력 ?no1=100&no2=50-->
   수2: <%=request.getParameter("no2") %><br>
   결과: <%= request.getAttribute("result")%> <br><br> <!-- setAttritube(addObject) -->
+
+  <H1>계산기(EL calc1.jsp)</H1>
+  계산기 ${msg }<br>        <!-- setAttritube(addObject) -->
+  수1: ${param.no1 }<br> <!--  getParameter : url로 입력 ?no1=100&no2=50-->
+  수2: ${param.no2 }<br>
+  결과: ${requestScope.result }<br><br> <!-- requestScope.result == result  -->
+
 </DIV> <!-- content END -->
 </DIV> <!-- container END -->
 ~~~
