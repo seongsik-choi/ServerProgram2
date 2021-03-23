@@ -87,10 +87,11 @@ ___
   * **① 보안문제(웹 상 JAVA Code  노출) : ex) JAVA코드 오류시 코드노출 + 주석노출**
   * **▶ Context Path: <%=request.getContextPath()   -> 출력 ->ContextPath: /test**
   * **① 패키지명 출력 (Legacy는 ex)sts.basic.test일 경우, 3번째 프로젝트명 사용)**
-  * **▶ ELDTO dto = new ELDTO();   // import한 ELDTO class 사용해 객체 생성**
-  * **▶ request.setAttribute("dto", dto);    // 데이터를 저장(key 값, 저장된 데이터)**
-  * **▶ ELDTO eldto = (ELDTO)request.getAttribute("dto");   // 데이터 가져오기 Type 매칭**
-  * **① **  
+
+  * **▶JSP와 EL의 사용 차이(request 객체의 호출 차이)**
+  * **① JSP : request.getAttribute("name)      ==  EL : ${requestScope.name} or ${name}**
+  * **① JSP : request.getParameter("money") == EL : ${param.money}** 
+  * **① JSP : 생성된객체.getMovie()     체     == EL : ${dto.movie }**  
   * **▶ ** 
   * **① ** 
   * **▶ ** 
