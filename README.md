@@ -64,9 +64,9 @@ ___
 ├─Spring Elements  
 ├─Java Resources(src)  
    └─src/main/java/sts/basic/test      <-- JAVA class 파일  
-   └─sts_basic/src/main/webapp             : ★Eclipse의 WebContent와 동일 기능★(하위 폴더 ex)form 등)    
+   └─sts_basic/src/main/webapp             : ★Eclipse의 WebContent와 동일 기능★ 하위 폴더 ex)form 등   
    └─sts_basic/src/main/webapp/resources     : CSS, JS, Image등의 리소스 저장 폴더  
-   └─sts_basic/src/main/webapp/WEB-INF       : Web 환경 설정 XML + spring이 반드시 필요  
+   └─sts_basic/src/main/webapp/WEB-INF       : Web 환경 설정 XML + 실행시 spring이 반드시 필요  
    └─sts_basic/src/main/webapp/WEB-INF/spring  : Spring 환경 설정 XML  
    └─sts_basic/src/main/webapp/WEB-INF/views   : JSP file 저장 폴더 
 ___ 
@@ -87,5 +87,16 @@ ___
   * **① 보안문제(웹 상 JAVA Code  노출) : ex) JAVA코드 오류시 코드노출 + 주석노출**  
   * **▶ Context Path: <%=request.getContextPath()   -> 출력 ->ContextPath: /test** 
   * **① 패키지명 출력 (Legacy는 ex)sts.basic.test일 경우, 3번째 프로젝트명 사용)** 
+
+  * **▶ ELDTO dto = new ELDTO();   // import한 ELDTO class 사용해 객체 생성** 
+  * **▶ request.setAttribute("dto", dto);    // 데이터를 저장(key 값, 저장된 데이터)** 
+  * **▶ ELDTO eldto = (ELDTO)request.getAttribute("dto");   // 데이터 가져오기 Type 매칭** 
+  * **① **  
+  * **▶ ** 
+  * **① ** 
+  * **▶ ** 
+  * **① ** 
+  * **▶ ** 
+  * **① ** 
 * 0323 :  
 * 0323 :  
