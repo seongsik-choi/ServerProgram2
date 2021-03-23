@@ -94,8 +94,8 @@ ___
   * ④ JSP : request.setAttribute("no1", 100); -> int no1 = (Integer)request.getAttribute("no1"); // Object형 -> Int형 형변환
   * **▶ex)exam1.jsp(Get방식의 getParameter 사용) / exam2.jsp(Post방식의 Set,getAttritube 사용)**
 * 0323 : [10] Spring MVC Annotation(@Controller, @RequestMapping) 실습, 더하기 연산
-* **▶ Spring Legacy Project -> Spring Legacy Project 생성 : sts_calc / dev.mvc.calc** 
-* **▶ex) CallcCont.java(Controller(Action) 구현) / calc1.jsp(View 구현)** 
+  * **▶ Spring Legacy Project -> Spring Legacy Project 생성 : sts_calc / dev.mvc.calc** 
+  * **▶ex) CallcCont.java(Controller(Action) 구현) / calc1.jsp(View 구현)** 
 ~~~
 // CallcCont.java
 package dev.mvc.calc; // add method와 sub method 
