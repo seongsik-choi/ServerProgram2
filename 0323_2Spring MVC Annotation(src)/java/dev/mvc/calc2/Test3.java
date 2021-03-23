@@ -4,6 +4,7 @@
 ▷ /src/main/java/dev.mvc.calc2.Test3.java
 
  -> 해결 방법
+ ▷ /src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml
  ▶ servlet-contex.xml에 선언하여  @Controller Annotation이 선언된 클래스를 자동 생성
 <context:component-scan base-package="dev.mvc.cal2" />
  */
