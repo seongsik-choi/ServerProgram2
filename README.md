@@ -44,8 +44,7 @@ ___
   * ▶ 서블릿의 사용 목적?  
   * A9) Web에서의 데이터 처리, JSP도 서버에서 서블릿으로 변경되어 실행  
   * ▶ 서블릿 실행시 GET방식이 호출되는 이유는? 
-  * A10) http://localhost:9090/mvc/form/study2 주소가 브러우저에 입력되어 실행되기 때문에 GET 방식으로처리 + GET 방식(Broswer에 주소를 입력) +POST방식(form에서 진행)  
-
+  * A10) http://localhost:9090/mvc/form/study2 주소가 브러우저에 입력되어 실행되기 때문에 GET 방식으로처리 + GET 방식(Broswer에 주소를 입력) +POST방식(form에서 진행)
 * **0319 : [03] JSP Model 2(MVC) 개론, Model/JSP View가 결합된 MVC Controller version 1.0**
 * **0319 : [04] JSP View가 분리된 MVC Controller version 2.0 실습(Servlet(Controller)<->JSP(View)**
   * **▶ex)Controller2ex.java(Controller) & view2ex.jsp(View)로 나뉘는 MVC 2.0 예제**  
@@ -92,10 +91,10 @@ ___
   * ② JSP : request.getParameter("money") == EL : ${param.money}
   * ③ JSP : 생성된객체.getMovie()             == EL : ${dto.movie }
   * ④ JSP : request.setAttribute("no1", 100); -> int no1 = (Integer)request.getAttribute("no1"); // Object형 -> Int형 형변환
-  * **▶ex)exam1.jsp(Get방식의 getParameter 사용) / exam2.jsp(Post방식의 Set,getAttritube 사용)**
+  * **▶ ex)exam1.jsp(Get방식의 getParameter 사용) / exam2.jsp(Post방식의 Set,getAttritube 사용)**
 * **0323 : [10] Spring MVC Annotation(@Controller, @RequestMapping) 실습, 더하기 연산**
   * **▶ Spring Legacy Project -> Spring Legacy Project 생성 : sts_calc / dev.mvc.calc** 
-  * **▶ex) CallcCont.java(Controller(Action) 구현) / calc1.jsp(View 구현)** 
+  * **▶ ex) CallcCont.java(Controller(Action) 구현) / calc1.jsp(View 구현)** 
 ~~~
 // CallcCont.java
 package dev.mvc.calc; // add method와 sub method 
