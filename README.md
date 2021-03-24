@@ -240,7 +240,8 @@ public class HomeController {
 
 	└─calc/calc.jsp... images 등
 ~~~
-* **0324 : [12] Spring MVC Annotation(@RequestParam, Form값의 자동 추출) 실습, GET/POST 방식의 분리**
+---
+* **0324 : [12.1] Spring MVC Annotation(@RequestParam, Form값의 자동 추출) 실습**
   * ▶CalcCont.java(자동형변환) / CalcCont2.java(VO(DTO)객체 생성) 차이
 ~~~
 /*
@@ -280,8 +281,59 @@ public class HomeController {
     return mav;
   }
 ~~~
+* **0324 : [12.2] Spring MVC Annotation / GET/POST 방식의 분리**
+  * ▶CalcCont3.java(GET,POST 호출) / tot_from.jsp(GET method view) / tot_proc.jsp(POST method view)
+~~~
+/* ▶ Controller에서의 GET, POST 분리
+1. View: JSP
+2. Controller 분리(RequestMethod.GET / RequestMethod.POST)
+*/
+// CalcCont3.java
+package dev.mvc.calc;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
+@Controller
+public class CalcCont3 {
+  public CalcCont3() {
+    System.out.println("-> CalcCont3 object created.");
+  }
+ 
+  // 1) Get방식의 출력 : tot_form.jsp 호출
+  // http://localhost:9090/calc/calc/add3.do -> calc(패키지 이름) / calc(mapping name)
+ @RequestMapping(value="/calc/add3.do", method=RequestMethod.GET) 
+  public ModelAndView add3() {
+    ModelAndView mav = new ModelAndView();    
+    mav.addObject("no1", 1000);
+    mav.addObject("no2", 2000);
+    mav.setViewName("/calc/tot_form"); // /Web-INF/views/calc/tot_form.jsp
+    return mav;
+  }
+ 
+ // 2) POST 방식의 처리 : tot_proc.jsp 호출(처리페이지)
+ @RequestMapping(value="/calc/add3.do", method=RequestMethod.POST) 
+  public ModelAndView add3(CalcVO calcVO) {
+    ModelAndView mav = new ModelAndView();    
+    calcVO.setMsg("더하기");   //  mav.addObject("msg", "더하기"); 자동실행
+    calcVO.setResult(calcVO.getNo1() + calcVO.getNo2());  // Getter 받아옴
+    mav.setViewName("/calc/tot_proc"); // /Web-INF/views/calc/tot_proc.jsp
+    return mav;
+  }
+}
 
-* **0324 : **
+//  /Web-INF/views/calc/tot_form.jsp
+<H1>계산기</H1>
+    <form name='frm' method='post' action="/calc/calc/add3.do">
+      수1: <input type='number' name='no1' value='${no1 }' autofocus="autofocus"><br><br>
+      수2: <input type='number' name='no2' value='${no2 }'><br><br>
+      <button type='submit'>합계</button>
+    </form>
 
-* **0324 : **
+// /Web-INF/views/calc/tot_proc.jsp
+<H1>${calcVO.msg } 계산기</H1>
+    수1: ${calcVO.no1 } <br>
+    수2: ${calcVO.no2 } <br>
+    결과: ${calcVO.result } <br>
+~~~
