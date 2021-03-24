@@ -213,5 +213,31 @@ public class HomeController {
    <a href="http://localhost:9090/calc/calc/mod.do?no1=10&no2=3">나누기</a><BR>
  </DIV>
 ~~~
+~~~
+// 경로 정리(sts_calc)
+├─Java Resources(src)  
+   └─src/main/java/dev/mvc/패키지명            <-- JAVA class 파일 
 
-* **0324 : **
+   └─src/main/webapp			 <--  ★Eclipse의 WebContent와 동일 기능, JSP의 단독 실행 가능력    
+     └─src/main/webapp/resources     <--  CSS, JS, Image등의 리소스 저장 폴더  
+					└─calc\images <-- ★servlet-context에서 경로 명시로 리소스 출력★
+					// <resources mapping="/resources/**" location="/resources/" />
+					└─css\style.css   <-- css 파일 명시로 JSP에서 접근 가능 
+    
+    └─src/main/webapp/WEB-INF		 <-- Web 환경 설정 XML + 실행시 spring이 반드시 필요  
+      └─spring/appServlet				 <-- Spring 환경 설정 XML  
+	 └─servlet-context.xml  
+		//<context:component-scan base-package="dev.mvc.cal2" /> : 다른 패키지 추가(Defence injection) 
+		// <beans:property name="prefix" value="/WEB-INF/views/" /> : ModelAndView 준비하여 jsp 파일명 및 데이터 저장
+		// <beans:property name="suffix" value=".jsp" />
+
+    └─src/main/webapp/WEB-INF		 
+      └─views   : ★JSP file 저장 폴더, JSP의 단독 실행 불가능 ex)index.jsp★ 
+       // HomeContoller.java의 @RequestMapping(value = {"/", "/index.do"}, method = RequestMethod.GET)
+       // HomeContoller.java의 return "index";		// /WEB-INF/views/index.jsp의 반환
+       // 두 Line으로 실행이가능
+       // 3가지 주소 접속을 허용(http://localhost:9090/calc/index.do http://localhost:9090/calc http://localhost:9090/calc/)
+
+	└─calc/calc.jsp... images 등
+~~~
+* **0324 : [12] Spring MVC Annotation(@RequestParam, Form값의 자동 추출) 실습, GET/POST 방식의 분리**
