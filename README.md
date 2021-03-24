@@ -241,3 +241,46 @@ public class HomeController {
 	└─calc/calc.jsp... images 등
 ~~~
 * **0324 : [12] Spring MVC Annotation(@RequestParam, Form값의 자동 추출) 실습, GET/POST 방식의 분리**
+~~~
+/*
+▶ CalcVO.java	/ CalcCont2.java  / cacl_vo.jsp
+▶ GET방식의 getter와 setter 값 전달
+  - CalcVO.java(Getter와 Setter) / 
+    CalcCont2.java(CalcVo로 객체 생성 하여, Getter와 Setter로 값 저장) /
+    cacl_vo.jsp(CalcCont2.java의 View 부분)
+
+  1) CalcVO.java의 setMsg으로 값 setting  + setNo1, setNo2은 GET방식 url로 값 setting
+  2) setResult에 전달할 값(getNo1, getNo2) 전달
+  3) calc_vo.jsp에서 EL 방식으로 출력 ex) calcVO.no1 // 객체이름.멤버변수
+  */
+
+   /*
+  1) 자동으로 형변환 및 값이 저장되는 경우 : CalcCont.java의 경우
+ @RequestMapping(value="/calc/sub.do", method=RequestMethod.GET)
+ public ModelAndView sub(int no1, int no2) {		// Controller의 method() 실행
+   ModelAndView mav = new ModelAndView(); 
+   mav.addObject("msg", "빼기");          // request.setAttritube("msg", "빼기");
+   mav.addObject("result", no1 - no2);  
+   mav.setViewName("/calc/calc1");  // /WEB-INF/views/calc/calc1.jsp
+   return mav;
+ }*/
+  
+  /* 
+  2) VO(DTO)객체가 생성되는 경우: calcVO 객체는 request 객체에 자동으로 저장 -> JSP view까지 값 전달
+  http://localhost:9090/calc/calc/add2.do?no1=100&no2=50
+  -> calc(패키지 이름) / calc(mapping name) 
+  */
+  @RequestMapping(value="/calc/add2.do", method=RequestMethod.GET) 
+  public ModelAndView add2(CalcVO calcVO) {				 // CalcVO들의 Setter들이 호출
+    ModelAndView mav = new ModelAndView();    
+    calcVO.setMsg("더하기");							//  mav.addObject("msg", "더하기"); 자동실행
+    calcVO.setResult(calcVO.getNo1() + calcVO.getNo2());		// Getter 받아옴
+    mav.setViewName("/calc/calc_vo");						// /WEB-INF/views/calc/calc_vo.jsp
+    return mav;
+  }
+~~~
+
+
+* **0324 : **
+
+* **0324 : **
