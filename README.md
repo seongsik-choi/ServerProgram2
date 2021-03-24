@@ -192,5 +192,26 @@ public class HomeController {
 	}
 }
 ~~~
+~~~
+// index.jsp
+<link href="../css/style.css" rel="Stylesheet" type="text/css">  <!-- resources dic의 css폴더 style.css 적용 -->
+ <DIV class="container_main"> 
+   <H1>Spring 계산기</H1>
+   <!--  문제) calc1.jsp와 연결하기 -->
+   <!--  문제) calc1.jsp와 연결하기 -->
+   <!--  resources는 webapp 폴더 : /webapp/resources -->
+   <!--  index.jsp의 경로 :  webapp/WEB-INF/views/index.jsp -->
+   <!--  href 경로(CalcCont.java의 mapping) :  webapp/WEB-INF/views/calc/calc.jsp -->
+   <img src='./resources/calc/images/add.png'></img> 
+   <a href="http://localhost:9090/calc/calc/add.do?no1=100&no2=50">더하기</a><BR>
+   
+   <img src='./resources/calc/images/sub.png'></img> 
+   <a href="http://localhost:9090/calc/calc/sub.do?no1=100&no2=50">빼기</a><BR>
+   <img src='./resources/calc/images/mul.png'></img> 
+   <a href="http://localhost:9090/calc/calc/mul.do?no1=100&no2=50">곱하기</a><BR>
+   <img src='./resources/calc/images/div.png'></img> 
+   <a href="http://localhost:9090/calc/calc/mod.do?no1=10&no2=3">나누기</a><BR>
+ </DIV>
+~~~
 
 * **0324 : **
