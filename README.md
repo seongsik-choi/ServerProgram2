@@ -241,6 +241,7 @@ public class HomeController {
 	└─calc/calc.jsp... images 등
 ~~~
 * **0324 : [12] Spring MVC Annotation(@RequestParam, Form값의 자동 추출) 실습, GET/POST 방식의 분리**
+  * ▶CalcCont.java(자동형변환) / CalcCont2.java(VO(DTO)객체 생성) 차이
 ~~~
 /*
 ▶ CalcVO.java	/ CalcCont2.java  / cacl_vo.jsp
