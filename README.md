@@ -271,11 +271,11 @@ public class HomeController {
   -> calc(패키지 이름) / calc(mapping name) 
   */
   @RequestMapping(value="/calc/add2.do", method=RequestMethod.GET) 
-  public ModelAndView add2(CalcVO calcVO) {				 // CalcVO들의 Setter들이 호출
+  public ModelAndView add2(CalcVO calcVO) {	// CalcVO들의 Setter들이 호출
     ModelAndView mav = new ModelAndView();    
-    calcVO.setMsg("더하기");							//  mav.addObject("msg", "더하기"); 자동실행
-    calcVO.setResult(calcVO.getNo1() + calcVO.getNo2());		// Getter 받아옴
-    mav.setViewName("/calc/calc_vo");						// /WEB-INF/views/calc/calc_vo.jsp
+    calcVO.setMsg("더하기");		//  mav.addObject("msg", "더하기"); 자동실행
+    calcVO.setResult(calcVO.getNo1() + calcVO.getNo2());	// Getter 받아옴
+    mav.setViewName("/calc/calc_vo");		// /WEB-INF/views/calc/calc_vo.jsp
     return mav;
   }
 ~~~
