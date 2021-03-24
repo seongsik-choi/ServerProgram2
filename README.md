@@ -67,6 +67,8 @@ ___
    └─src/main/webapp/resources     : CSS, JS, Image등의 리소스 저장 폴더  
    └─src/main/webapp/WEB-INF       : Web 환경 설정 XML + 실행시 spring이 반드시 필요  
    └─src/main/webapp/WEB-INF/spring  : Spring 환경 설정 XML  
+         └─servlet-context.xml
+	     └─**<context:component-scan base-package="dev.mvc.cal2" /> : 다른 패키지 추가(Defence injection)**
    └─src/main/webapp/WEB-INF/views   : ★JSP file 저장 폴더, JSP의 단독 실행 불가능★ 
 ___ 
 * **0322 : [06] Maven, Spring기반 MVC의 원리, STS Spring MVC의 개발 구조 분석, Spring 4.3.23~26 설정, JDK 1.8.0, Servlet 3.1 설정, Spring  Tools 3 Add-On 설치 ★**
