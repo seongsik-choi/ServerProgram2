@@ -172,8 +172,25 @@ Scriptlet 방식과 EL 방식의 처리
   * ①  
 ___ 
 * **0324 : [11] Image, JS, CSS등 정적(static) resource의 사용, 이미지 출력, sts_calc**
+  * **▶webapp/resources/calc 폴더에 이미지 저장 : webapp은 jsp 없이 단독 실행이 가능**
   * **▶A) servlet-context.xml의 설정 때문에 resources 내 정적 리소스만 사용 가능!** 
   * ① 선언 : <rsources mapping="/resources/**" location="/resources/" />
   * ② static resources(정적 리소스, 이미지 출력)
   * ③ 검색 서버 등 외부의 서버에 이미지 등 노출 방지
+~~~
+// HomeController.java 설정
+@Controller
+public class HomeController {
+	
+  // 3가지 주소 접속을 허용
+  // http://localhost:9090/calc/index.do
+  // http://localhost:9090/calc
+  // http://localhost:9090/calc/
+	@RequestMapping(value = {"/", "/index.do"}, method = RequestMethod.GET)
+	public String home(Locale locale, Model model) {	
+		return "index"; // /WEB-INF/views/index.jsp의 반환
+	}
+}
+~~~
+
 * **0324 : **
